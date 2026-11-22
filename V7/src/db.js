@@ -40,12 +40,6 @@ CREATE TABLE IF NOT EXISTS scheduled (
   message TEXT,
   frequency TEXT,
   next_run INTEGER
-
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  guild_id TEXT NOT NULL,
-  user_id TEXT NOT NULL,
-  action TEXT NOT NULL,
-  run_at INTEGER NOT NULL
 );
 CREATE INDEX IF NOT EXISTS idx_scheduled_run ON scheduled (run_at);
 CREATE INDEX IF NOT EXISTS idx_scheduled_next ON scheduled (next_run);
