@@ -1,4 +1,6 @@
-// Add this to the existing server.js file (append at the end)
+const { PermissionFlagsBits } = require('discord.js');
+const express = require('express');
+const api = express.Router();
 
 // ---------- Member Selector API ----------
 api.get('/members', async (req, res) => {
@@ -79,8 +81,7 @@ api.get('/members', async (req, res) => {
     total,
     page,
     pages: Math.ceil(total / limit)
-    });
+  });
 });
 
-// Add this import at the top if not already present
-const { PermissionFlagsBits } = require('discord.js');
+module.exports = api;
